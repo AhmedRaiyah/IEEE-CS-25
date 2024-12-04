@@ -1,13 +1,14 @@
 #include <iostream>
 #include <climits>
+#include <vector>
 using namespace std;
 
 int main() {
     int n;
     cin >> n;
-    string directions;
-    cin >> directions;
-    int positions[n];
+    string direction;
+    cin >> direction;
+    vector<int> positions(n);
 
     for (int i = 0; i < n; i++) {
         cin >> positions[i];
@@ -16,19 +17,21 @@ int main() {
     int minCollisionTime = INT_MAX;
     
     for (int i = 0; i < n - 1; i++) {
-        // Check for adjacent R-L pairs
-        if (directions[i] == 'R' && directions[i + 1] == 'L') {
-            // Calculate the collision time
+        if (direction[i] == 'R' && direction[i + 1] == 'L') {
             int collisionTime = (positions[i + 1] - positions[i]) / 2;
             minCollisionTime = min(minCollisionTime, collisionTime);
         }
     }
 
     if (minCollisionTime == INT_MAX) {
-        cout << "-1" << endl;  // No collision occurs
+        cout << "-1" << endl;  
     } else {
         cout << minCollisionTime << endl;
     }
 
     return 0;
 }
+
+
+// This problem was a bit difficult to understand solve so the whole answer was not copied,
+// but I did not come up with the answer on my own.

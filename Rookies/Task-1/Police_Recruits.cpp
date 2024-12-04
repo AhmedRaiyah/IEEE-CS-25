@@ -27,10 +27,9 @@ int main() {
                 police += arr[i];
             }
         }
-        cout << "\nunres: " << unResolved << "\npolice: " << police << endl;
     }
 
-    cout << "\n\n Final unresolved: " << unResolved;
+    cout << unResolved;
 
     return 0;
 }

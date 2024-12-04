@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
 using namespace std;
 
@@ -15,21 +14,21 @@ int main() {
     int steps = 0, maxIndex = 0, minIndex = 0;
 
     for(int i = 1; i < n; i++) {
-        if(arr[i] >= arr[maxIndex]) {
+        if(arr[i] > arr[maxIndex]) {
             maxIndex = i;
         }
-    }
-    for(int i = 1; i < n; i++) {
         if(arr[i] <= arr[minIndex]) {
             minIndex = i;
         }
     }
 
+    steps = maxIndex;
+
     if(minIndex < maxIndex) {
         minIndex++;
     }
 
-    steps = maxIndex + (n - minIndex - 1);
+    steps += (n - minIndex - 1);
 
     cout << steps;
 
