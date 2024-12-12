@@ -10,11 +10,12 @@ int main() {
 
     while(left<= right) {
         int mid = (left + right) / 2;
-        // cout << "mid = " << mid << endl;
+        // cout << "\n-mid = " << mid << endl;
         int temp1 = 0, temp2 = mid;
 
         while(temp2 > 0) {
             temp1 += temp2;
+            // temp1 /= k;
             temp2 /= k;
         }
 
@@ -26,7 +27,7 @@ int main() {
         }
     }
 
-    cout << minLines;
+    cout <<minLines;
 
     return 0;
 }
